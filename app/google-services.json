@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "670407731609",
+    "project_id": "peekypoke-abc3c",
+    "storage_bucket": "peekypoke-abc3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670407731609:android:511a2c6a02cadf67f48b08",
+        "android_client_info": {
+          "package_name": "com.binarybeast.peekypoke"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670407731609-5ijnmv410rjhdnrc67m4fnr2gcticnvr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.binarybeast.peekypoke",
+            "certificate_hash": "a60dc48b8d1326601c0c13c3a3d93dadbc42597a"
+          }
+        },
+        {
+          "client_id": "670407731609-46a4ha21iki3bptnpe0cmq5bgs7l5ti8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpiemJxiq8nIhxzIDM0oZB46WqXB24YMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670407731609-46a4ha21iki3bptnpe0cmq5bgs7l5ti8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
