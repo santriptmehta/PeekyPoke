@@ -16,8 +16,10 @@ class MainActivity : AppCompatActivity() {
         if(FirebaseAuth.getInstance().currentUser == null){
             val intent = Intent(this, AuthenticationActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
+        UserUtils.getCurrentUser()
         setFragment(FeedFragment())
 
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_nav_view)

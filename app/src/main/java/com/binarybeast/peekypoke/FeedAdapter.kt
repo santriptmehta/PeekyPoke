@@ -1,6 +1,7 @@
 package com.binarybeast.peekypoke
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.github.thunder413.datetimeutils.DateTimeStyle
+import com.github.thunder413.datetimeutils.DateTimeUtils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -40,6 +43,11 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
 
         holder.postText.text = model.text
         holder.authorText.text = model.user.name
+
+        val date = DateTimeUtils.formatDate(model.time)
+        val dateFormat = DateTimeUtils.formatWithStyle(date,DateTimeStyle.LONG)
+
+        holder.timeText.text = dateFormat
 
         Glide.with(context)
             .load(model.imageUrl)
@@ -115,5 +123,10 @@ class FeedAdapter(options: FirestoreRecyclerOptions<Post>, val context: Context)
         }
 
 
+        holder.commentIcon.setOnClickListener {
+            val intent = Intent(context, CommentActivity::class.java)
+            intent.putExtra("PostID", snapshots.getSnapshot(position).id)
+            context.startActivity(intent)
+        }
     }
 }
